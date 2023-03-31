@@ -10,6 +10,7 @@ const Tab = createBottomTabNavigator();
 function CharacterScreen() {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+      <Text>Funny</Text>
     </View>
   );
 }
