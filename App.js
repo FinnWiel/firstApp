@@ -1,16 +1,17 @@
 import * as React from 'react';
-import { Text, View, Animated } from 'react-native';
-import { StyleSheet, useRef } from 'react-native';
+import { Text, View, TextInput, StyleSheet, ScrollView } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import CombatScreen from './Combat';
+
 
 const Tab = createBottomTabNavigator();
+
 
 function CharacterScreen() {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Text>Funny</Text>
     </View>
   );
 }
@@ -22,12 +23,6 @@ function InventoryScreen() {
   );
 }
 
-function CombatScreen() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-    </View>
-  );
-}
 
 function SpellScreen() {
   return (
@@ -46,7 +41,7 @@ function NoteScreen() {
 function MyTabs() {
   return (
     <Tab.Navigator
-    initialRouteName= "Character"
+    initialRouteName= "Combat"
     screenOptions={{
       tabBarStyle: {
         position: 'absolute',
@@ -55,8 +50,9 @@ function MyTabs() {
         borderRadius: 10,
         height: 60,
       },
-      tabBarActiveTintColor: '#002BBC',
+      tabBarActiveTintColor: '#005683',
       tabBarShowLabel: false,
+      headerShown: false,
     }} >
       <Tab.Screen name="Combat" component={CombatScreen} options={{headertabBarLabel: 'Combat', tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="sword" color={color} size={size} />
@@ -79,10 +75,10 @@ function MyTabs() {
 
 
 export default function App() {
+  
   return (
-    <NavigationContainer>
-      <MyTabs />
-    </NavigationContainer>
+      <NavigationContainer>
+        <MyTabs />
+      </NavigationContainer>
   );
 }
-
