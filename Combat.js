@@ -17,10 +17,9 @@ export default function CombatScreen() {
     const [checked, setChecked] = useState(initialState);
   
     return (
-      <View style={{flex: 1, alignItems: 'center', gap: 20, backgroundColor: '#ecf0f1'}}> 
-  
+      <View style={{flex: 1, alignItems: 'center', gap: 20}}> 
+ 
         <View style={{flex: 0, justifyContent: 'center', alignItems: 'center', flexDirection: 'row', gap: 10, top: 50}}>
-
           <View style={styles.circle}>
             <Text style={styles.labelText}>AC</Text>
             <TextInput placeholder='...' keyboardType='number-pad' style={styles.inputText}></TextInput>
@@ -42,11 +41,9 @@ export default function CombatScreen() {
               <TextInput placeholder='.' keyboardType='number-pad' style={styles.inputText}></TextInput>
             </View>
           </View>
-
         </View>
   
         <View style={styles.containerBar}>
-
           <View style={styles.subContainerBar}>
             <Text style={styles.labelText}>Speed</Text>
             <TextInput placeholder='...' keyboardType='number-pad' style={styles.inputText}></TextInput>
@@ -66,11 +63,9 @@ export default function CombatScreen() {
             <Text style={styles.labelText}>Passive Wis</Text>
             <TextInput placeholder='...' keyboardType='number-pad' style={styles.inputText}></TextInput>
           </View>
-
         </View>
   
         <View style={styles.containerBar}>
-
           <View style={[styles.subContainerBar, {width: '45%'}]}>
             <Text style={styles.labelText}>Saves</Text>
             <View style={{ flex: 0, flexDirection: 'row', gap: 10,}}>
@@ -88,11 +83,9 @@ export default function CombatScreen() {
               <Checkbox value={checked.checkboxFailThree} onValueChange={value => setChecked({...checked, checkboxFailThree: value,})}/>
             </View>
           </View>
-
         </View>
 
-        <View style={[styles.containerBar, {height: 65,}]}>
-
+        <View style={[styles.containerBar, {height: 80,}]}>
           <View style={[styles.subContainerBar, {width: '45%', gap: 0}]}>
             <Text style={styles.labelText}>Name</Text>
             <TextInput placeholder='...' style={[styles.inputText, {top: 0}]}></TextInput>
@@ -111,11 +104,30 @@ export default function CombatScreen() {
               <TextInput keyboardType='number-pad' placeholder='.' style={[styles.inputText, {top: 0}]}></TextInput>
             </View>         
           </View>
-
         </View>
 
-        <View style={[styles.containerBar, {height: 65,}]}>
+        <View style={[styles.containerBar, {height: 80,}]}>
+          <View style={[styles.subContainerBar, {width: '45%', gap: 0}]}>
+            <Text style={styles.labelText}>Name</Text>
+            <TextInput placeholder='...' style={[styles.inputText, {top: 0}]}></TextInput>
+          </View>
 
+          <View style={[styles.subContainerBar, {gap: 0}]}>
+            <Text style={styles.labelText}>Bonus</Text>
+            <TextInput keyboardType='number-pad' placeholder='...' style={[styles.inputText, {top: 0}]}></TextInput>
+          </View>
+
+          <View style={[styles.subContainerBar, {gap: 0}]}>
+            <Text style={styles.labelText}>Damage</Text>
+            <View style={{ flex: 0, flexDirection: 'row', gap: 0}}>
+              <TextInput keyboardType='number-pad' placeholder='.' style={[styles.inputText, {top: 0}]}></TextInput>
+              <Text style={styles.inputText}>d</Text>
+              <TextInput keyboardType='number-pad' placeholder='.' style={[styles.inputText, {top: 0}]}></TextInput>
+            </View>         
+          </View>        
+        </View>
+
+        <View style={[styles.containerBar, {height: 80,}]}>
           <View style={[styles.subContainerBar, {width: '45%', gap: 0}]}>
             <Text style={styles.labelText}>Name</Text>
             <TextInput placeholder='...' style={[styles.inputText, {top: 0}]}></TextInput>
@@ -134,30 +146,6 @@ export default function CombatScreen() {
               <TextInput keyboardType='number-pad' placeholder='.' style={[styles.inputText, {top: 0}]}></TextInput>
             </View>         
           </View>
-          
-        </View>
-
-        <View style={[styles.containerBar, {height: 65,}]}>
-
-          <View style={[styles.subContainerBar, {width: '45%', gap: 0}]}>
-            <Text style={styles.labelText}>Name</Text>
-            <TextInput placeholder='...' style={[styles.inputText, {top: 0}]}></TextInput>
-          </View>
-
-          <View style={[styles.subContainerBar, {gap: 0}]}>
-            <Text style={styles.labelText}>Bonus</Text>
-            <TextInput keyboardType='number-pad' placeholder='...' style={[styles.inputText, {top: 0}]}></TextInput>
-          </View>
-
-          <View style={[styles.subContainerBar, {gap: 0}]}>
-            <Text style={styles.labelText}>Damage</Text>
-            <View style={{ flex: 0, flexDirection: 'row', gap: 0}}>
-              <TextInput keyboardType='number-pad' placeholder='.' style={[styles.inputText, {top: 0}]}></TextInput>
-              <Text style={styles.inputText}>d</Text>
-              <TextInput keyboardType='number-pad' placeholder='.' style={[styles.inputText, {top: 0}]}></TextInput>
-            </View>         
-          </View>
-
         </View>
       </View>   
     );

@@ -41,13 +41,13 @@ function NoteScreen() {
 function MyTabs() {
   return (
     <Tab.Navigator
-    initialRouteName= "Combat"
+    initialRouteName= "Character"
     screenOptions={{
       tabBarStyle: {
         position: 'absolute',
-        bottom: 20,
-        marginHorizontal: 20,
-        borderRadius: 10,
+        bottom: 0,
+        marginHorizontal: 0,
+        borderRadius: 0,
         height: 60,
       },
       tabBarActiveTintColor: '#005683',
@@ -79,6 +79,6 @@ export default function App() {
   return (
       <NavigationContainer>
         <MyTabs />
-      </NavigationContainer>
+      </NavigationContainer> 
   );
 }
