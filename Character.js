@@ -1,5 +1,6 @@
 import * as React from "react";
 import { Text, View, TextInput, StyleSheet, ScrollView } from "react-native";
+import statScore from "./statScore";
 
 export default function CharacterScreen() {
   return (
@@ -110,6 +111,73 @@ export default function CharacterScreen() {
           ></TextInput>
         </View>
       </View>
+      <View style={styles.statContainer}>
+        <View style={styles.statScore}>
+          <TextInput
+            placeholder="..."
+            style={[styles.inputText, { position: "absolute", left: 25 }]}
+          ></TextInput>
+          <View style={styles.statBonus}>
+            <TextInput placeholder="..." style={styles.inputText}></TextInput>
+          </View>
+        </View>
+        <View style={styles.statScore}>
+          <TextInput
+            placeholder="..."
+            style={[styles.inputText, { position: "absolute", left: 25 }]}
+          ></TextInput>
+          <View style={styles.statBonus}>
+            <TextInput placeholder="..." style={styles.inputText}></TextInput>
+          </View>
+        </View>
+        <View style={styles.statScore}>
+          <TextInput
+            placeholder="..."
+            style={[styles.inputText, { position: "absolute", left: 25 }]}
+          ></TextInput>
+          <View style={styles.statBonus}>
+            <TextInput placeholder="..." style={styles.inputText}></TextInput>
+          </View>
+        </View>
+        <View style={styles.statScore}>
+          <TextInput
+            placeholder="..."
+            style={[styles.inputText, { position: "absolute", left: 25 }]}
+          ></TextInput>
+          <View style={styles.statBonus}>
+            <TextInput placeholder="..." style={styles.inputText}></TextInput>
+          </View>
+        </View>
+        <View style={styles.statScore}>
+          <TextInput
+            placeholder="..."
+            style={[styles.inputText, { position: "absolute", left: 25 }]}
+          ></TextInput>
+          <View style={styles.statBonus}>
+            <TextInput placeholder="..." style={styles.inputText}></TextInput>
+          </View>
+        </View>
+        <View style={styles.statScore}>
+          <TextInput
+            placeholder="..."
+            style={[styles.inputText, { position: "absolute", left: 25 }]}
+          ></TextInput>
+          <View style={styles.statBonus}>
+            <TextInput placeholder="..." style={styles.inputText}></TextInput>
+          </View>
+        </View>
+      </View>
+
+      <View style={{flex: 0, justifyContent: 'center', alignItems: 'center', width: '100%',}}>
+        <View>{statScore()}</View>
+        <View>{statScore()}</View>
+        <View>{statScore()}</View>
+        <View>{statScore()}</View>
+        <View>{statScore()}</View>
+      </View>
+      
+
+      <View style={[styles.containerBar, { width: 0, height: 400 }]}></View>
     </ScrollView>
   );
 }
@@ -163,5 +231,40 @@ const styles = StyleSheet.create({
   },
   checkbox: {
     margin: 5,
+  },
+  statContainer: {
+    flex: 0,
+    flexDirection: "row",
+    gap: 20,
+    top: 50,
+    flexWrap: "wrap",
+    justifyContent: "center",
+  },
+  statScore: {
+    flex: 0,
+    justifyContent: "center",
+    alignItems: "center",
+    flexDirection: "row",
+    height: 150,
+    width: 150,
+    backgroundColor: "white",
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 5 },
+    shadowOpacity: 0.3,
+    shadowRadius: 6,
+    elevation: 6,
+    borderRadius: 10,
+  },
+  statBonus: {
+    backgroundColor: "lightgray",
+    height: 130,
+    width: 65,
+    position: "absolute",
+    right: 0,
+    borderRadius: 5,
+    margin: 10,
+    flex: 0,
+    justifyContent: "center",
+    alignItems: "center",
   },
 });
