@@ -1,8 +1,31 @@
 import * as React from "react";
 import { Text, View, TextInput, StyleSheet, ScrollView } from "react-native";
 import StatScore from "./statScore";
+import { useState } from "react";
 
 export default function CharacterScreen() {
+
+  const [strength, setStrength] = useState("10");
+  const strMod = Math.floor((strength - 10) / 2);
+
+  const [dexterity, setDexterity] = useState("10");
+  const dexMod = Math.floor((dexterity - 10) / 2);
+
+  const [constitution, setConstitution] = useState("10");
+  const conMod = Math.floor((constitution - 10)/2);
+
+  const [intelligence, setIntelligence] = useState("10");
+  const intMod = Math.floor((intelligence - 10)/2);
+
+  const [wisdom, setWisdom] = useState("10");
+  const wisMod = Math.floor((wisdom - 10)/2);
+
+  const [charisma, setCharisma] = useState("10");
+  const chaMod = Math.floor((charisma - 10)/2);
+
+  let armor = 10
+  const AC = (armor + dexMod);
+
   return (
     <ScrollView
       style={{ flex: 1 }}
@@ -36,11 +59,9 @@ export default function CharacterScreen() {
       <View style={{ flex: 0, flexDirection: "row", top: 50, gap: 10 }}>
         <View style={styles.circle}>
           <Text style={styles.labelText}>AC</Text>
-          <TextInput
-            placeholder="..."
-            keyboardType="number-pad"
+          <Text
             style={styles.inputText}
-          ></TextInput>
+          >{AC}</Text>
         </View>
 
         <View style={styles.circle}>
@@ -86,11 +107,9 @@ export default function CharacterScreen() {
 
         <View style={styles.subContainerBar}>
           <Text style={styles.labelText}>Initiative</Text>
-          <TextInput
-            placeholder="..."
-            keyboardType="number-pad"
+          <Text
             style={styles.inputText}
-          ></TextInput>
+          >{"+"+dexMod}</Text>
         </View>
 
         <View style={styles.subContainerBar}>
@@ -99,7 +118,7 @@ export default function CharacterScreen() {
             placeholder="..."
             keyboardType="number-pad"
             style={styles.inputText}
-          ></TextInput>
+          >+2</TextInput>
         </View>
 
         <View style={styles.subContainerBar}>
@@ -114,65 +133,99 @@ export default function CharacterScreen() {
       <View style={styles.statContainer}>
         <View style={styles.statScore}>
           <TextInput
-            placeholder="..."
+            onChangeText={(newStrength) => setStrength(newStrength)}
             style={[styles.inputText, { position: "absolute", left: 25 }]}
-          ></TextInput>
+          >
+            {strength}
+          </TextInput>
           <View style={styles.statBonus}>
-            <TextInput placeholder="..." style={styles.inputText}></TextInput>
+            <Text style={styles.inputText}>
+              {strMod}
+            </Text>
           </View>
         </View>
         <View style={styles.statScore}>
           <TextInput
-            placeholder="..."
+            onChangeText={(newDexterity) => setDexterity(newDexterity)}
             style={[styles.inputText, { position: "absolute", left: 25 }]}
-          ></TextInput>
+          >
+            {dexterity}
+          </TextInput>
           <View style={styles.statBonus}>
-            <TextInput placeholder="..." style={styles.inputText}></TextInput>
+            <Text style={styles.inputText}>
+              {dexMod}
+            </Text>
           </View>
         </View>
         <View style={styles.statScore}>
           <TextInput
-            placeholder="..."
+            onChangeText={(newConstitution) => setConstitution(newConstitution)}
             style={[styles.inputText, { position: "absolute", left: 25 }]}
-          ></TextInput>
+          >
+            {constitution}
+          </TextInput>
           <View style={styles.statBonus}>
-            <TextInput placeholder="..." style={styles.inputText}></TextInput>
+            <Text style={styles.inputText}>
+              {conMod}
+            </Text>
           </View>
         </View>
         <View style={styles.statScore}>
           <TextInput
-            placeholder="..."
+            onChangeText={(newIntelligence) => setIntelligence(newIntelligence)}
             style={[styles.inputText, { position: "absolute", left: 25 }]}
-          ></TextInput>
+          >
+            {intelligence}
+          </TextInput>
           <View style={styles.statBonus}>
-            <TextInput placeholder="..." style={styles.inputText}></TextInput>
+            <Text style={styles.inputText}>
+              {intMod}
+            </Text>
           </View>
         </View>
         <View style={styles.statScore}>
           <TextInput
-            placeholder="..."
+            onChangeText={(newWisdom) => setWisdom(newWisdom)}
             style={[styles.inputText, { position: "absolute", left: 25 }]}
-          ></TextInput>
+          >
+            {wisdom}
+          </TextInput>
           <View style={styles.statBonus}>
-            <TextInput placeholder="..." style={styles.inputText}></TextInput>
+            <Text style={styles.inputText}>
+              {wisMod}
+            </Text>
           </View>
         </View>
         <View style={styles.statScore}>
           <TextInput
-            placeholder="..."
+            onChangeText={(newCharisma) => setCharisma(newCharisma)}
             style={[styles.inputText, { position: "absolute", left: 25 }]}
-          ></TextInput>
+          >
+            {charisma}
+          </TextInput>
           <View style={styles.statBonus}>
-            <TextInput placeholder="..." style={styles.inputText}></TextInput>
+            <Text style={styles.inputText}>
+              {chaMod}
+            </Text>
           </View>
         </View>
       </View>
 
-      <View style={{flex: 0, justifyContent: 'center', alignItems: 'center', width: '100%',}}>
-        <View><StatScore skill="Acrobatics" /></View>
-        <View><StatScore skill="Stealth" /></View>
+      <View
+        style={{
+          flex: 0,
+          justifyContent: "center",
+          alignItems: "center",
+          width: "100%",
+        }}
+      >
+        <View>
+          <StatScore skill="Acrobatics" />
+        </View>
+        <View>
+          <StatScore skill="Stealth" />
+        </View>
       </View>
-      
 
       <View style={[styles.containerBar, { width: 0, height: 400 }]}></View>
     </ScrollView>
