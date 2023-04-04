@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Text, View, TextInput, StyleSheet, ScrollView } from "react-native";
-import statScore from "./statScore";
+import StatScore from "./statScore";
 
 export default function CharacterScreen() {
   return (
@@ -169,11 +169,8 @@ export default function CharacterScreen() {
       </View>
 
       <View style={{flex: 0, justifyContent: 'center', alignItems: 'center', width: '100%',}}>
-        <View>{statScore()}</View>
-        <View>{statScore()}</View>
-        <View>{statScore()}</View>
-        <View>{statScore()}</View>
-        <View>{statScore()}</View>
+        <View><StatScore skill="Acrobatics" /></View>
+        <View><StatScore skill="Stealth" /></View>
       </View>
       
 
