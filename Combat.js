@@ -117,18 +117,21 @@ export default function CombatScreen() {
               onValueChange={(value) =>
                 setChecked({ ...checked, checkboxSuccesOne: value })
               }
+              color="#005683"
             />
             <Checkbox
               value={checked.checkboxSuccesTwo}
               onValueChange={(value) =>
                 setChecked({ ...checked, checkboxSuccesTwo: value })
               }
+              color="#005683"
             />
             <Checkbox
               value={checked.checkboxSuccesThree}
               onValueChange={(value) =>
                 setChecked({ ...checked, checkboxSuccesThree: value })
               }
+              color="#005683"
             />
           </View>
         </View>
@@ -141,18 +144,21 @@ export default function CombatScreen() {
               onValueChange={(value) =>
                 setChecked({ ...checked, checkboxFailOne: value })
               }
+              color="#005683"
             />
             <Checkbox
               value={checked.checkboxFailTwo}
               onValueChange={(value) =>
                 setChecked({ ...checked, checkboxFailTwo: value })
               }
+              color="#005683"
             />
             <Checkbox
               value={checked.checkboxFailThree}
               onValueChange={(value) =>
                 setChecked({ ...checked, checkboxFailThree: value })
               }
+              color="#005683"
             />
           </View>
         </View>
@@ -265,9 +271,7 @@ export default function CombatScreen() {
           </View>
         </View>
       </View>
-      <View
-        style={[styles.containerBar, {width: 0}]}
-      ></View>
+      <View style={[styles.containerBar, { width: 0 }]}></View>
     </ScrollView>
   );
 }

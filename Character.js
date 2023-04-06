@@ -4,7 +4,6 @@ import StatScore from "./statScore";
 import { useState } from "react";
 
 export default function CharacterScreen() {
-
   const [strength, setStrength] = useState("10");
   const strMod = Math.floor((strength - 10) / 2);
 
@@ -12,19 +11,19 @@ export default function CharacterScreen() {
   const dexMod = Math.floor((dexterity - 10) / 2);
 
   const [constitution, setConstitution] = useState("10");
-  const conMod = Math.floor((constitution - 10)/2);
+  const conMod = Math.floor((constitution - 10) / 2);
 
   const [intelligence, setIntelligence] = useState("10");
-  const intMod = Math.floor((intelligence - 10)/2);
+  const intMod = Math.floor((intelligence - 10) / 2);
 
   const [wisdom, setWisdom] = useState("10");
-  const wisMod = Math.floor((wisdom - 10)/2);
+  const wisMod = Math.floor((wisdom - 10) / 2);
 
   const [charisma, setCharisma] = useState("10");
-  const chaMod = Math.floor((charisma - 10)/2);
+  const chaMod = Math.floor((charisma - 10) / 2);
 
-  let armor = 10
-  const AC = (armor + dexMod);
+  let armor = 10;
+  const AC = armor + dexMod;
 
   return (
     <ScrollView
@@ -59,9 +58,7 @@ export default function CharacterScreen() {
       <View style={{ flex: 0, flexDirection: "row", top: 50, gap: 10 }}>
         <View style={styles.circle}>
           <Text style={styles.labelText}>AC</Text>
-          <Text
-            style={styles.inputText}
-          >{AC}</Text>
+          <Text style={styles.inputText}>{AC}</Text>
         </View>
 
         <View style={styles.circle}>
@@ -107,9 +104,7 @@ export default function CharacterScreen() {
 
         <View style={styles.subContainerBar}>
           <Text style={styles.labelText}>Initiative</Text>
-          <Text
-            style={styles.inputText}
-          >{"+"+dexMod}</Text>
+          <Text style={styles.inputText}>{"+" + dexMod}</Text>
         </View>
 
         <View style={styles.subContainerBar}>
@@ -118,7 +113,9 @@ export default function CharacterScreen() {
             placeholder="..."
             keyboardType="number-pad"
             style={styles.inputText}
-          >+2</TextInput>
+          >
+            +2
+          </TextInput>
         </View>
 
         <View style={styles.subContainerBar}>
@@ -139,9 +136,7 @@ export default function CharacterScreen() {
             {strength}
           </TextInput>
           <View style={styles.statBonus}>
-            <Text style={styles.inputText}>
-              {strMod}
-            </Text>
+            <Text style={styles.inputText}>{strMod}</Text>
           </View>
         </View>
         <View style={styles.statScore}>
@@ -152,9 +147,7 @@ export default function CharacterScreen() {
             {dexterity}
           </TextInput>
           <View style={styles.statBonus}>
-            <Text style={styles.inputText}>
-              {dexMod}
-            </Text>
+            <Text style={styles.inputText}>{dexMod}</Text>
           </View>
         </View>
         <View style={styles.statScore}>
@@ -165,9 +158,7 @@ export default function CharacterScreen() {
             {constitution}
           </TextInput>
           <View style={styles.statBonus}>
-            <Text style={styles.inputText}>
-              {conMod}
-            </Text>
+            <Text style={styles.inputText}>{conMod}</Text>
           </View>
         </View>
         <View style={styles.statScore}>
@@ -178,9 +169,7 @@ export default function CharacterScreen() {
             {intelligence}
           </TextInput>
           <View style={styles.statBonus}>
-            <Text style={styles.inputText}>
-              {intMod}
-            </Text>
+            <Text style={styles.inputText}>{intMod}</Text>
           </View>
         </View>
         <View style={styles.statScore}>
@@ -191,9 +180,7 @@ export default function CharacterScreen() {
             {wisdom}
           </TextInput>
           <View style={styles.statBonus}>
-            <Text style={styles.inputText}>
-              {wisMod}
-            </Text>
+            <Text style={styles.inputText}>{wisMod}</Text>
           </View>
         </View>
         <View style={styles.statScore}>
@@ -204,9 +191,7 @@ export default function CharacterScreen() {
             {charisma}
           </TextInput>
           <View style={styles.statBonus}>
-            <Text style={styles.inputText}>
-              {chaMod}
-            </Text>
+            <Text style={styles.inputText}>{chaMod}</Text>
           </View>
         </View>
       </View>
@@ -221,13 +206,27 @@ export default function CharacterScreen() {
       >
         <View>
           <StatScore skill="Acrobatics" />
-        </View>
-        <View>
+          <StatScore skill="Animal Handiling" />
+          <StatScore skill="Arcana" />
+          <StatScore skill="Athletics" />
+          <StatScore skill="Deception" />
+          <StatScore skill="History" />
+          <StatScore skill="Insight" />
+          <StatScore skill="Intimidation" />
+          <StatScore skill="Investigation" />
+          <StatScore skill="Medicine" />
+          <StatScore skill="Nature" />
+          <StatScore skill="Perception" />
+          <StatScore skill="Performance" />
+          <StatScore skill="Persuasion" />
+          <StatScore skill="Religion" />
+          <StatScore skill="Sleight of Hand" />
           <StatScore skill="Stealth" />
+          <StatScore skill="Survival" />
         </View>
       </View>
 
-      <View style={[styles.containerBar, { width: 0, height: 400 }]}></View>
+      <View style={[styles.containerBar, { width: 0 }]}></View>
     </ScrollView>
   );
 }
