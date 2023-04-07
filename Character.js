@@ -2,28 +2,14 @@ import * as React from "react";
 import { Text, View, TextInput, StyleSheet, ScrollView } from "react-native";
 import StatScore from "./statScore";
 import { useState } from "react";
+import { StatBlock } from "./statBlock"
 
 export default function CharacterScreen() {
-  const [strength, setStrength] = useState("10");
-  const strMod = Math.floor((strength - 10) / 2);
-
-  const [dexterity, setDexterity] = useState("10");
-  const dexMod = Math.floor((dexterity - 10) / 2);
-
-  const [constitution, setConstitution] = useState("10");
-  const conMod = Math.floor((constitution - 10) / 2);
-
-  const [intelligence, setIntelligence] = useState("10");
-  const intMod = Math.floor((intelligence - 10) / 2);
-
-  const [wisdom, setWisdom] = useState("10");
-  const wisMod = Math.floor((wisdom - 10) / 2);
-
-  const [charisma, setCharisma] = useState("10");
-  const chaMod = Math.floor((charisma - 10) / 2);
 
   let armor = 10;
-  const AC = armor + dexMod;
+  const AC = armor;
+  let proficiencyBonus = 2;
+
 
   return (
     <ScrollView
@@ -104,7 +90,7 @@ export default function CharacterScreen() {
 
         <View style={styles.subContainerBar}>
           <Text style={styles.labelText}>Initiative</Text>
-          <Text style={styles.inputText}>{"+" + dexMod}</Text>
+          <Text style={styles.inputText}></Text>
         </View>
 
         <View style={styles.subContainerBar}>
@@ -128,72 +114,12 @@ export default function CharacterScreen() {
         </View>
       </View>
       <View style={styles.statContainer}>
-        <View style={styles.statScore}>
-          <TextInput
-            onChangeText={(newStrength) => setStrength(newStrength)}
-            style={[styles.inputText, { position: "absolute", left: 25 }]}
-          >
-            {strength}
-          </TextInput>
-          <View style={styles.statBonus}>
-            <Text style={styles.inputText}>{strMod}</Text>
-          </View>
-        </View>
-        <View style={styles.statScore}>
-          <TextInput
-            onChangeText={(newDexterity) => setDexterity(newDexterity)}
-            style={[styles.inputText, { position: "absolute", left: 25 }]}
-          >
-            {dexterity}
-          </TextInput>
-          <View style={styles.statBonus}>
-            <Text style={styles.inputText}>{dexMod}</Text>
-          </View>
-        </View>
-        <View style={styles.statScore}>
-          <TextInput
-            onChangeText={(newConstitution) => setConstitution(newConstitution)}
-            style={[styles.inputText, { position: "absolute", left: 25 }]}
-          >
-            {constitution}
-          </TextInput>
-          <View style={styles.statBonus}>
-            <Text style={styles.inputText}>{conMod}</Text>
-          </View>
-        </View>
-        <View style={styles.statScore}>
-          <TextInput
-            onChangeText={(newIntelligence) => setIntelligence(newIntelligence)}
-            style={[styles.inputText, { position: "absolute", left: 25 }]}
-          >
-            {intelligence}
-          </TextInput>
-          <View style={styles.statBonus}>
-            <Text style={styles.inputText}>{intMod}</Text>
-          </View>
-        </View>
-        <View style={styles.statScore}>
-          <TextInput
-            onChangeText={(newWisdom) => setWisdom(newWisdom)}
-            style={[styles.inputText, { position: "absolute", left: 25 }]}
-          >
-            {wisdom}
-          </TextInput>
-          <View style={styles.statBonus}>
-            <Text style={styles.inputText}>{wisMod}</Text>
-          </View>
-        </View>
-        <View style={styles.statScore}>
-          <TextInput
-            onChangeText={(newCharisma) => setCharisma(newCharisma)}
-            style={[styles.inputText, { position: "absolute", left: 25 }]}
-          >
-            {charisma}
-          </TextInput>
-          <View style={styles.statBonus}>
-            <Text style={styles.inputText}>{chaMod}</Text>
-          </View>
-        </View>
+        <StatBlock stat="Strenght"/>
+        <StatBlock stat="Dexterity"/>
+        <StatBlock stat="Constitution"/>
+        <StatBlock stat="Intelligence"/>
+        <StatBlock stat="Wisdom"/>
+        <StatBlock stat="Charisma"/>
       </View>
 
       <View
@@ -204,26 +130,24 @@ export default function CharacterScreen() {
           width: "100%",
         }}
       >
-        <View>
-          <StatScore skill="Acrobatics" />
-          <StatScore skill="Animal Handiling" />
-          <StatScore skill="Arcana" />
-          <StatScore skill="Athletics" />
-          <StatScore skill="Deception" />
-          <StatScore skill="History" />
-          <StatScore skill="Insight" />
-          <StatScore skill="Intimidation" />
-          <StatScore skill="Investigation" />
-          <StatScore skill="Medicine" />
-          <StatScore skill="Nature" />
-          <StatScore skill="Perception" />
-          <StatScore skill="Performance" />
-          <StatScore skill="Persuasion" />
-          <StatScore skill="Religion" />
-          <StatScore skill="Sleight of Hand" />
-          <StatScore skill="Stealth" />
-          <StatScore skill="Survival" />
-        </View>
+          <StatScore skill="Acrobatics" proficiency={proficiencyBonus}/>
+          <StatScore skill="Animal Handiling" proficiency={proficiencyBonus}/>
+          <StatScore skill="Arcana" proficiency={proficiencyBonus}/>
+          <StatScore skill="Athletics" proficiency={proficiencyBonus}/>
+          <StatScore skill="Deception" proficiency={proficiencyBonus}/>
+          <StatScore skill="History" proficiency={proficiencyBonus}/>
+          <StatScore skill="Insight" proficiency={proficiencyBonus}/>
+          <StatScore skill="Intimidation" proficiency={proficiencyBonus}/>
+          <StatScore skill="Investigation" proficiency={proficiencyBonus}/>
+          <StatScore skill="Medicine" proficiency={proficiencyBonus}/>
+          <StatScore skill="Nature" proficiency={proficiencyBonus}/>
+          <StatScore skill="Perception" proficiency={proficiencyBonus}/>
+          <StatScore skill="Performance" proficiency={proficiencyBonus}/>
+          <StatScore skill="Persuasion" proficiency={proficiencyBonus}/>
+          <StatScore skill="Religion" proficiency={proficiencyBonus}/>
+          <StatScore skill="Sleight of Hand" proficiency={proficiencyBonus}/>
+          <StatScore skill="Stealth" proficiency={proficiencyBonus}/>
+          <StatScore skill="Survival" proficiency={proficiencyBonus}/>
       </View>
 
       <View style={[styles.containerBar, { width: 0 }]}></View>

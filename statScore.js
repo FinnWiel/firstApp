@@ -6,9 +6,7 @@ import { useState } from "react";
 export default function StatScore(props) {
   const [checked, setChecked] = useState("second");
 
-  // temporary values
-  let proficiencyBonus = 2
-  let regualarScore = 2
+  let regularScore = 0;
 
   return (
     <View
@@ -47,10 +45,15 @@ export default function StatScore(props) {
           alignItems: "center",
         }}
       >
-        <TextInput 
-        style={{ fontSize: 24 }}>
-          {checked === 'first' ? (proficiencyBonus + regualarScore) : regualarScore}
-        </TextInput> 
+        <TextInput style={{ fontSize: 24 }}>
+          {checked === "first"
+            ? props.proficiency + regularScore >= 0
+              ? "+" + (props.proficiency + regularScore)
+              : props.proficiency + regularScore
+            : regularScore >= 0
+            ? "+" + regularScore
+            : regularScore}
+        </TextInput>
       </View>
     </View>
   );
