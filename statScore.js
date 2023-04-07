@@ -6,7 +6,7 @@ import { useState } from "react";
 export default function StatScore(props) {
   const [checked, setChecked] = useState("second");
 
-  let regularScore = Math.floor((props.type - 10) / 2)
+  let regularScore = Math.floor((props.type - 10) / 2);
 
   return (
     <View

@@ -2,10 +2,10 @@ import * as React from "react";
 import { Text, View, TextInput, StyleSheet, ScrollView } from "react-native";
 import StatScore from "./statScore";
 import { useState } from "react";
-import { StatBlock } from "./statBlock"
+import { StatBlock } from "./statBlock";
 
 export default function CharacterScreen() {
-
+  
   const [strenghtBonus, setStrenghtBonus] = useState("10");
   const [dexterityBonus, setDexterityBonus] = useState("10");
   const [constitutionBonus, setConstitutionBonus] = useState("10");
@@ -120,12 +120,36 @@ export default function CharacterScreen() {
         </View>
       </View>
       <View style={styles.statContainer}>
-        <StatBlock stat="Strenght" state={strenghtBonus} setState={setStrenghtBonus}/>
-        <StatBlock stat="Dexterity" state={dexterityBonus} setState={setDexterityBonus}/>
-        <StatBlock stat="Constitution" state={constitutionBonus} setState={setConstitutionBonus}/>
-        <StatBlock stat="Intelligence" state={intelligenceBonus} setState={setIntelligenceBonus}/>
-        <StatBlock stat="Wisdom" state={wisdomBonus} setState={setWisdomBonus}/>
-        <StatBlock stat="Charisma" state={charismaBonus} setState={setCharismaBonus}/>
+        <StatBlock
+          stat="Strenght"
+          state={strenghtBonus}
+          setState={setStrenghtBonus}
+        />
+        <StatBlock
+          stat="Dexterity"
+          state={dexterityBonus}
+          setState={setDexterityBonus}
+        />
+        <StatBlock
+          stat="Constitution"
+          state={constitutionBonus}
+          setState={setConstitutionBonus}
+        />
+        <StatBlock
+          stat="Intelligence"
+          state={intelligenceBonus}
+          setState={setIntelligenceBonus}
+        />
+        <StatBlock
+          stat="Wisdom"
+          state={wisdomBonus}
+          setState={setWisdomBonus}
+        />
+        <StatBlock
+          stat="Charisma"
+          state={charismaBonus}
+          setState={setCharismaBonus}
+        />
       </View>
 
       <View
@@ -136,24 +160,96 @@ export default function CharacterScreen() {
           width: "100%",
         }}
       >
-          <StatScore skill="Acrobatics" proficiency={proficiencyBonus} type={dexterityBonus}/>
-          <StatScore skill="Animal Handiling" proficiency={proficiencyBonus} type={wisdomBonus}/>
-          <StatScore skill="Arcana" proficiency={proficiencyBonus} type={intelligenceBonus}/>
-          <StatScore skill="Athletics" proficiency={proficiencyBonus} type={strenghtBonus}/>
-          <StatScore skill="Deception" proficiency={proficiencyBonus}  type={charismaBonus}/>
-          <StatScore skill="History" proficiency={proficiencyBonus} type={intelligenceBonus}/>
-          <StatScore skill="Insight" proficiency={proficiencyBonus} type={wisdomBonus}/>
-          <StatScore skill="Intimidation" proficiency={proficiencyBonus} type={charismaBonus}/>
-          <StatScore skill="Investigation" proficiency={proficiencyBonus} type={intelligenceBonus}/>
-          <StatScore skill="Medicine" proficiency={proficiencyBonus} type={wisdomBonus}/>
-          <StatScore skill="Nature" proficiency={proficiencyBonus} type={intelligenceBonus}/>
-          <StatScore skill="Perception" proficiency={proficiencyBonus} type={wisdomBonus}/>
-          <StatScore skill="Performance" proficiency={proficiencyBonus} type={charismaBonus}/>
-          <StatScore skill="Persuasion" proficiency={proficiencyBonus} type={charismaBonus}/>
-          <StatScore skill="Religion" proficiency={proficiencyBonus} type={intelligenceBonus}/>
-          <StatScore skill="Sleight of Hand" proficiency={proficiencyBonus} type={dexterityBonus}/>
-          <StatScore skill="Stealth" proficiency={proficiencyBonus} type={dexterityBonus}/>
-          <StatScore skill="Survival" proficiency={proficiencyBonus} type={wisdomBonus}/>
+        <StatScore
+          skill="Acrobatics"
+          proficiency={proficiencyBonus}
+          type={dexterityBonus}
+        />
+        <StatScore
+          skill="Animal Handiling"
+          proficiency={proficiencyBonus}
+          type={wisdomBonus}
+        />
+        <StatScore
+          skill="Arcana"
+          proficiency={proficiencyBonus}
+          type={intelligenceBonus}
+        />
+        <StatScore
+          skill="Athletics"
+          proficiency={proficiencyBonus}
+          type={strenghtBonus}
+        />
+        <StatScore
+          skill="Deception"
+          proficiency={proficiencyBonus}
+          type={charismaBonus}
+        />
+        <StatScore
+          skill="History"
+          proficiency={proficiencyBonus}
+          type={intelligenceBonus}
+        />
+        <StatScore
+          skill="Insight"
+          proficiency={proficiencyBonus}
+          type={wisdomBonus}
+        />
+        <StatScore
+          skill="Intimidation"
+          proficiency={proficiencyBonus}
+          type={charismaBonus}
+        />
+        <StatScore
+          skill="Investigation"
+          proficiency={proficiencyBonus}
+          type={intelligenceBonus}
+        />
+        <StatScore
+          skill="Medicine"
+          proficiency={proficiencyBonus}
+          type={wisdomBonus}
+        />
+        <StatScore
+          skill="Nature"
+          proficiency={proficiencyBonus}
+          type={intelligenceBonus}
+        />
+        <StatScore
+          skill="Perception"
+          proficiency={proficiencyBonus}
+          type={wisdomBonus}
+        />
+        <StatScore
+          skill="Performance"
+          proficiency={proficiencyBonus}
+          type={charismaBonus}
+        />
+        <StatScore
+          skill="Persuasion"
+          proficiency={proficiencyBonus}
+          type={charismaBonus}
+        />
+        <StatScore
+          skill="Religion"
+          proficiency={proficiencyBonus}
+          type={intelligenceBonus}
+        />
+        <StatScore
+          skill="Sleight of Hand"
+          proficiency={proficiencyBonus}
+          type={dexterityBonus}
+        />
+        <StatScore
+          skill="Stealth"
+          proficiency={proficiencyBonus}
+          type={dexterityBonus}
+        />
+        <StatScore
+          skill="Survival"
+          proficiency={proficiencyBonus}
+          type={wisdomBonus}
+        />
       </View>
 
       <View style={[styles.containerBar, { width: 0 }]}></View>
