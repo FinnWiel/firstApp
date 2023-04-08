@@ -3,8 +3,38 @@ import { Text, View, TextInput, StyleSheet, ScrollView } from "react-native";
 import StatScore from "./statScore";
 import { useState } from "react";
 import { StatBlock } from "./statBlock";
+import SelectDropdown from "react-native-select-dropdown";
 
 export default function CharacterScreen() {
+  const classes = [
+    "Barbarian",
+    "Bard",
+    "Cleric",
+    "Druid",
+    "Fighter",
+    "Monk",
+    "Paladin",
+    "Ranger",
+    "Rogue",
+    "Sorcerer",
+    "Warlock",
+    "Wizard",
+    "Artificer",
+  ];
+  const [characterClass, setCharacterClass] = useState();
+
+  const races = [
+    "Dragonborn",
+    "Dwarf",
+    "Elf",
+    "Gnome",
+    "Half-Elf",
+    "Half-Orc",
+    "Halfling",
+    "Human",
+    "Tiefling",
+  ];
+  const [characterRace, setCharacterRace] = useState();
 
   const [strenghtBonus, setStrenghtBonus] = useState("10");
   const [dexterityBonus, setDexterityBonus] = useState("10");
@@ -13,45 +43,98 @@ export default function CharacterScreen() {
   const [wisdomBonus, setWisdomBonus] = useState("10");
   const [charismaBonus, setCharismaBonus] = useState("10");
 
-  const dexMod = Math.floor((dexterityBonus - 10) / 2)
-  const wisMod = Math.floor((wisdomBonus - 10) / 2)
+  const dexMod = Math.floor((dexterityBonus - 10) / 2);
+  const wisMod = Math.floor((wisdomBonus - 10) / 2);
 
-  const [level, setLevel] = useState(1)
+  const [level, setLevel] = useState(1);
   let armor = 10;
-  const AC = (armor + Math.floor((dexterityBonus - 10) / 2));
-  let proficiencyBonus = level <= 5 ? 2 : level < 9 ? 3 : level < 13 ? 4 : level < 17 ? 5 : level < 21 ? 6 : 0
+  const AC = armor + Math.floor((dexterityBonus - 10) / 2);
+  let proficiencyBonus =
+    level <= 5
+      ? 2
+      : level < 9
+      ? 3
+      : level < 13
+      ? 4
+      : level < 17
+      ? 5
+      : level < 21
+      ? 6
+      : 0;
 
   return (
     <ScrollView
       style={{ flex: 1 }}
       contentContainerStyle={{ flexGrow: 1, alignItems: "center", gap: 20 }}
     >
-      <View style={[styles.containerBar, { height: 40, justifyContent:'space-around' }]}>
-        <TextInput style={{fontSize: 20}} placeholder="Name"></TextInput>
-        <View style={{flex: 0, flexDirection: 'row', gap: 10, justifyContent: 'center', alignItems: 'center'}}>
-          <Text style={{fontSize: 20}}>Level</Text>
-          <TextInput style={{fontSize: 20}} keyboardType="number-pad" onChangeText={(newLevel) => setLevel(newLevel)}>{level}</TextInput>
+      <View
+        style={[
+          styles.containerBar,
+          { height: 40, justifyContent: "space-around" },
+        ]}
+      >
+        <TextInput style={{ fontSize: 20 }} placeholder="Name"></TextInput>
+        <View
+          style={{
+            flex: 0,
+            flexDirection: "row",
+            gap: 10,
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Text style={{ fontSize: 20 }}>Level</Text>
+          <TextInput
+            style={{ fontSize: 20 }}
+            keyboardType="number-pad"
+            onChangeText={(newLevel) => setLevel(newLevel)}
+          >
+            {level}
+          </TextInput>
         </View>
       </View>
       <View
         style={{
           flex: 0,
+          justifyContent: "space-between",
           height: 40,
           width: "90%",
           flexDirection: "row",
           top: 50,
-          gap: 30,
+          gap: 15,
         }}
       >
-        <View
-          style={[styles.containerBar, { height: 40, width: "45%", top: 0 }]}
-        >
-          <TextInput placeholder="Race"></TextInput>
+        <View>
+          <SelectDropdown
+            defaultButtonText="Class"
+            buttonStyle={[
+              styles.containerBar,
+              { top: 0, height: 40, width: "90%" },
+            ]}
+            dropdownStyle={{ marginTop: -25, borderRadius: 10 }}
+            selectedRowStyle={{ backgroundColor: "#005683" }}
+            selectedRowTextStyle={{ color: "#fff" }}
+            data={classes}
+            onSelect={(newCharacterClass) =>
+              setCharacterClass(newCharacterClass)
+            }
+          ></SelectDropdown>
         </View>
-        <View
-          style={[styles.containerBar, { height: 40, width: "45%", top: 0 }]}
-        >
-          <TextInput placeholder="Class"></TextInput>
+        <View>
+          <SelectDropdown
+            defaultButtonText="Race"
+            buttonStyle={[
+              styles.containerBar,
+              { top: 0, height: 40, width: "90%" },
+            ]}
+            dropdownStyle={{ marginTop: -25, borderRadius: 10 }}
+            selectedRowStyle={{ backgroundColor: "#005683" }}
+            selectedRowTextStyle={{ color: "#fff" }}
+            data={races}
+            onSelect={(newCharacterRace) =>
+              setCharacterRace(newCharacterRace)
+            }
+          ></SelectDropdown>
         </View>
       </View>
 
@@ -99,32 +182,26 @@ export default function CharacterScreen() {
             placeholder="..."
             keyboardType="number-pad"
             style={styles.inputText}
-          >30</TextInput>
-        </View>
-
-        <View style={styles.subContainerBar}>
-          <Text style={styles.labelText}>Initiative</Text>
-          <Text style={styles.inputText}>{dexMod < 0 ? dexMod : "+" + dexMod}</Text>
-        </View>
-
-        <View style={styles.subContainerBar}>
-          <Text style={styles.labelText}>Proficiency</Text>
-          <TextInput
-            placeholder="..."
-            keyboardType="number-pad"
-            style={styles.inputText}
           >
-            +{proficiencyBonus}
+            30
           </TextInput>
         </View>
 
         <View style={styles.subContainerBar}>
+          <Text style={styles.labelText}>Initiative</Text>
+          <Text style={styles.inputText}>
+            {dexMod < 0 ? dexMod : "+" + dexMod}
+          </Text>
+        </View>
+
+        <View style={styles.subContainerBar}>
+          <Text style={styles.labelText}>Proficiency</Text>
+          <Text style={styles.inputText}>+{proficiencyBonus}</Text>
+        </View>
+
+        <View style={styles.subContainerBar}>
           <Text style={styles.labelText}>Passive Wis</Text>
-          <TextInput
-            placeholder="..."
-            keyboardType="number-pad"
-            style={styles.inputText}
-          >{wisMod + 10}</TextInput>
+          <Text style={styles.inputText}>{wisMod + 10}</Text>
         </View>
       </View>
       <View style={styles.statContainer}>
