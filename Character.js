@@ -13,6 +13,9 @@ export default function CharacterScreen() {
   const [wisdomBonus, setWisdomBonus] = useState("10");
   const [charismaBonus, setCharismaBonus] = useState("10");
 
+  const dexMod = Math.floor((dexterityBonus - 10) / 2)
+  const wisMod = Math.floor((wisdomBonus - 10) / 2)
+
   const [level, setLevel] = useState(1)
   let armor = 10;
   const AC = (armor + Math.floor((dexterityBonus - 10) / 2));
@@ -24,7 +27,7 @@ export default function CharacterScreen() {
       contentContainerStyle={{ flexGrow: 1, alignItems: "center", gap: 20 }}
     >
       <View style={[styles.containerBar, { height: 40, justifyContent:'space-around' }]}>
-        <TextInput placeholder="Name"></TextInput>
+        <TextInput style={{fontSize: 20}} placeholder="Name"></TextInput>
         <View style={{flex: 0, flexDirection: 'row', gap: 10, justifyContent: 'center', alignItems: 'center'}}>
           <Text style={{fontSize: 20}}>Level</Text>
           <TextInput style={{fontSize: 20}} keyboardType="number-pad" onChangeText={(newLevel) => setLevel(newLevel)}>{level}</TextInput>
@@ -96,12 +99,12 @@ export default function CharacterScreen() {
             placeholder="..."
             keyboardType="number-pad"
             style={styles.inputText}
-          ></TextInput>
+          >30</TextInput>
         </View>
 
         <View style={styles.subContainerBar}>
           <Text style={styles.labelText}>Initiative</Text>
-          <Text style={styles.inputText}></Text>
+          <Text style={styles.inputText}>{dexMod < 0 ? dexMod : "+" + dexMod}</Text>
         </View>
 
         <View style={styles.subContainerBar}>
@@ -121,7 +124,7 @@ export default function CharacterScreen() {
             placeholder="..."
             keyboardType="number-pad"
             style={styles.inputText}
-          ></TextInput>
+          >{wisMod + 10}</TextInput>
         </View>
       </View>
       <View style={styles.statContainer}>
