@@ -5,7 +5,7 @@ import { useState } from "react";
 import { StatBlock } from "./statBlock";
 
 export default function CharacterScreen() {
-  
+
   const [strenghtBonus, setStrenghtBonus] = useState("10");
   const [dexterityBonus, setDexterityBonus] = useState("10");
   const [constitutionBonus, setConstitutionBonus] = useState("10");
@@ -13,17 +13,22 @@ export default function CharacterScreen() {
   const [wisdomBonus, setWisdomBonus] = useState("10");
   const [charismaBonus, setCharismaBonus] = useState("10");
 
+  const [level, setLevel] = useState(1)
   let armor = 10;
-  const AC = armor;
-  let proficiencyBonus = 2;
+  const AC = (armor + Math.floor((dexterityBonus - 10) / 2));
+  let proficiencyBonus = level <= 5 ? 2 : level < 9 ? 3 : level < 13 ? 4 : level < 17 ? 5 : level < 21 ? 6 : 0
 
   return (
     <ScrollView
       style={{ flex: 1 }}
       contentContainerStyle={{ flexGrow: 1, alignItems: "center", gap: 20 }}
     >
-      <View style={[styles.containerBar, { height: 40 }]}>
+      <View style={[styles.containerBar, { height: 40, justifyContent:'space-around' }]}>
         <TextInput placeholder="Name"></TextInput>
+        <View style={{flex: 0, flexDirection: 'row', gap: 10, justifyContent: 'center', alignItems: 'center'}}>
+          <Text style={{fontSize: 20}}>Level</Text>
+          <TextInput style={{fontSize: 20}} keyboardType="number-pad" onChangeText={(newLevel) => setLevel(newLevel)}>{level}</TextInput>
+        </View>
       </View>
       <View
         style={{
