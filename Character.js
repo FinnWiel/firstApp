@@ -4,100 +4,14 @@ import StatScore from "./statScore";
 import { useState } from "react";
 import { StatBlock } from "./statBlock";
 import SelectDropdown from "react-native-select-dropdown";
+import { races, classes } from "./Data";
 
-export default function CharacterScreen() { 
-  const classes = [
-    {
-			"name": "Barbarian",
-		},
-		{
-			"name": "Bard",
-		},
-		{
-			"name": "Cleric",
-		},
-		{
-			"name": "Druid",
-		},
-		{
-			"name": "Fighter",
-		},
-		{
-			"name": "Monk",
-		},
-		{
-			"name": "Paladin",
-		},
-		{
-			"name": "Ranger",
-		},
-		{
-			"name": "Rogue",
-		},
-		{
-			"name": "Sorcerer",
-		},
-		{
-			"name": "Warlock",
-		},
-		{
-			"name": "Wizard",
-		}
-  ];
+export default function CharacterScreen() {
   const [characterClass, setCharacterClass] = useState();
+  const classIdx = classes.filter((clas) => clas.name === characterClass);
 
-  const races = [
-		{
-      "index" : "dragonbord",
-			"name" : "Dragonborn",
-      "speed" : "6",
-		},
-		{
-      "index" : "dwarf",
-			"name": "Dwarf",
-      "speed" : "5",
-		},
-		{
-      "index" : "elf",
-			"name": "Elf",
-      "speed" : "7",
-		},
-		{
-      "index" : "gnome",
-			"name": "Gnome",
-      "speed" : "5",
-		},
-		{
-      "index" : "half-elf",
-			"name": "Half-Elf",
-      "speed" : "6",
-		},
-		{
-      "index" : "half-orc",
-			"name": "Half-Orc",
-      "speed" : "6",
-		},
-		{
-      "index" : "halfling",
-			"name": "Halfling",
-      "speed" : "6",
-		},
-		{
-      "index" : "human",
-			"name": "Human",
-      "speed" : "6",
-		},
-		{
-      "index" : "tiefling",
-			"name": "Tiefling",
-      "speed" : "6",
-		}
-	];
   const [characterRace, setCharacterRace] = useState();
-
-  const raceIdx = races.filter(race  =>
-    race.name === characterRace
-  );
+  const raceIdx = races.filter((race) => race.name === characterRace);
 
   const [strenghtBonus, setStrenghtBonus] = useState("10");
   const [dexterityBonus, setDexterityBonus] = useState("10");
@@ -177,7 +91,7 @@ export default function CharacterScreen() {
             dropdownStyle={{ marginTop: -25, borderRadius: 10 }}
             selectedRowStyle={{ backgroundColor: "#005683" }}
             selectedRowTextStyle={{ color: "#fff" }}
-            data={classes.map(x => x.name)}
+            data={classes.map((x) => x.name)}
             onSelect={(newCharacterClass) =>
               setCharacterClass(newCharacterClass)
             }
@@ -193,10 +107,8 @@ export default function CharacterScreen() {
             dropdownStyle={{ marginTop: -25, borderRadius: 10 }}
             selectedRowStyle={{ backgroundColor: "#005683" }}
             selectedRowTextStyle={{ color: "#fff" }}
-            data={races.map(x => x.name)}
-            onSelect={(newCharacterRace) =>
-              setCharacterRace(newCharacterRace)
-            }
+            data={races.map((x) => x.name)}
+            onSelect={(newCharacterRace) => setCharacterRace(newCharacterRace)}
           ></SelectDropdown>
         </View>
       </View>
@@ -233,7 +145,9 @@ export default function CharacterScreen() {
               placeholder="."
               keyboardType="number-pad"
               style={styles.inputText}
-            ></TextInput>
+            >
+              {classIdx.map((x) => x.hitDice) || 0}
+            </TextInput>
           </View>
         </View>
       </View>
@@ -246,7 +160,7 @@ export default function CharacterScreen() {
             keyboardType="number-pad"
             style={styles.inputText}
           >
-            {(raceIdx.map(x => x.speed) * 5) || 0}
+            {raceIdx.map((x) => x.speed) * 5 || 0}
           </TextInput>
         </View>
 
