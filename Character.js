@@ -5,36 +5,99 @@ import { useState } from "react";
 import { StatBlock } from "./statBlock";
 import SelectDropdown from "react-native-select-dropdown";
 
-export default function CharacterScreen() {
+export default function CharacterScreen() { 
   const classes = [
-    "Barbarian",
-    "Bard",
-    "Cleric",
-    "Druid",
-    "Fighter",
-    "Monk",
-    "Paladin",
-    "Ranger",
-    "Rogue",
-    "Sorcerer",
-    "Warlock",
-    "Wizard",
-    "Artificer",
+    {
+			"name": "Barbarian",
+		},
+		{
+			"name": "Bard",
+		},
+		{
+			"name": "Cleric",
+		},
+		{
+			"name": "Druid",
+		},
+		{
+			"name": "Fighter",
+		},
+		{
+			"name": "Monk",
+		},
+		{
+			"name": "Paladin",
+		},
+		{
+			"name": "Ranger",
+		},
+		{
+			"name": "Rogue",
+		},
+		{
+			"name": "Sorcerer",
+		},
+		{
+			"name": "Warlock",
+		},
+		{
+			"name": "Wizard",
+		}
   ];
   const [characterClass, setCharacterClass] = useState();
 
   const races = [
-    "Dragonborn",
-    "Dwarf",
-    "Elf",
-    "Gnome",
-    "Half-Elf",
-    "Half-Orc",
-    "Halfling",
-    "Human",
-    "Tiefling",
-  ];
+		{
+      "index" : "dragonbord",
+			"name" : "Dragonborn",
+      "speed" : "6",
+		},
+		{
+      "index" : "dwarf",
+			"name": "Dwarf",
+      "speed" : "5",
+		},
+		{
+      "index" : "elf",
+			"name": "Elf",
+      "speed" : "7",
+		},
+		{
+      "index" : "gnome",
+			"name": "Gnome",
+      "speed" : "5",
+		},
+		{
+      "index" : "half-elf",
+			"name": "Half-Elf",
+      "speed" : "6",
+		},
+		{
+      "index" : "half-orc",
+			"name": "Half-Orc",
+      "speed" : "6",
+		},
+		{
+      "index" : "halfling",
+			"name": "Halfling",
+      "speed" : "6",
+		},
+		{
+      "index" : "human",
+			"name": "Human",
+      "speed" : "6",
+		},
+		{
+      "index" : "tiefling",
+			"name": "Tiefling",
+      "speed" : "6",
+		}
+	];
   const [characterRace, setCharacterRace] = useState();
+
+  const raceIdx = races.filter(race  =>
+    race.name === characterRace
+  );
 
   const [strenghtBonus, setStrenghtBonus] = useState("10");
   const [dexterityBonus, setDexterityBonus] = useState("10");
@@ -114,7 +177,7 @@ export default function CharacterScreen() {
             dropdownStyle={{ marginTop: -25, borderRadius: 10 }}
             selectedRowStyle={{ backgroundColor: "#005683" }}
             selectedRowTextStyle={{ color: "#fff" }}
-            data={classes}
+            data={classes.map(x => x.name)}
             onSelect={(newCharacterClass) =>
               setCharacterClass(newCharacterClass)
             }
@@ -130,7 +193,7 @@ export default function CharacterScreen() {
             dropdownStyle={{ marginTop: -25, borderRadius: 10 }}
             selectedRowStyle={{ backgroundColor: "#005683" }}
             selectedRowTextStyle={{ color: "#fff" }}
-            data={races}
+            data={races.map(x => x.name)}
             onSelect={(newCharacterRace) =>
               setCharacterRace(newCharacterRace)
             }
@@ -183,7 +246,7 @@ export default function CharacterScreen() {
             keyboardType="number-pad"
             style={styles.inputText}
           >
-            30
+            {(raceIdx.map(x => x.speed) * 5) || 0}
           </TextInput>
         </View>
 
