@@ -181,6 +181,7 @@ export default function CharacterScreen() {
           <Text style={styles.inputText}>{wisMod + 10}</Text>
         </View>
       </View>
+      
       <View style={styles.statContainer}>
         <StatBlock
           stat="Strenght"

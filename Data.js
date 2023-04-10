@@ -51,65 +51,240 @@ export const classes = [
     index: "barbarian",
     name: "Barbarian",
     hitDice: "12",
+    subclass: [
+      {
+        index: "berserker",
+        name: "Berserker",
+      },
+      {
+        index: "totem warrior",
+        name: "Totem Warrior",
+      },
+    ]
   },
   {
     index: "bard",
     name: "Bard",
     hitDice: "8",
+    subclass: [
+      {
+        index: "lore",
+        name: "Lore",
+      },
+      {
+        index: "valor",
+        name: "Valor",
+      },
+    ]
   },
   {
     index: "cleric",
     name: "Cleric",
     hitDice: "8",
+    subclass: [
+      {
+        index: "knowledge",
+        name: "Knowledge",
+      },
+      {
+        index: "life",
+        name: "Life",
+      },
+      {
+        index: "light",
+        name: "Light"
+      },
+      {
+        index: "nature",
+        name: "Nature"
+      },
+      {
+        index: "tempest",
+        name: "Tempest"
+      },
+      {
+        index: "trickery",
+        name: "Trickery"
+      },
+      {
+        index: "war",
+        name: "War"
+      }
+    ]
   },
   {
     index: "druid",
     name: "Druid",
     hitDice: "8",
+    subclass: [
+      {
+        index: "land",
+        name: "Land",
+      },
+      {
+        index: "moon",
+        name: "Moon",
+      },
+    ]
   },
   {
     index: "fighter",
     name: "Fighter",
     hitDice: "10",
+    subclass: [
+      {
+        index: "champion",
+        name: "Champion",
+      },
+      {
+        index: "battle master",
+        name: "Battle Master",
+      },
+      {
+        index: "eldrich knight",
+        name: "Eldrich Knight"
+      }
+    ]
   },
   {
     index: "monk",
     name: "Monk",
     hitDice: "8",
+    subclass: [
+      {
+        index: "shadow",
+        name: "Shadow",
+      },
+      {
+        index: "four flements",
+        name: "Four Elements"
+      },
+    ]
   },
   {
     index: "paladin",
     name: "Paladin",
     hitDice: "10",
+    subclass: [
+      {
+        index: "devotion",
+        name: "Devotion",
+      },
+      {
+        index: "ancients",
+        name: "Ancients",
+      },
+      {
+        index: "vengance",
+        name: "Vengance"
+      }
+    ]
   },
   {
     index: "ranger",
     name: "Ranger",
     hitDice: "10",
+    subclass: [
+      {
+        index: "hunter",
+        name: "Hunter",
+      },
+      {
+        index: "beast master",
+        name: "Beast Master",
+      },
+    ]
   },
   {
     index: "rogue",
     name: "Rogue",
     hitDice: "8",
+    subclass: [
+      {
+        index: "thief",
+        name: "Thief",
+      },
+      {
+        index: "assasin",
+        name: "Assasin",
+      },
+      {
+        index: "arcane trickster",
+        name: "Arcane Trickster"
+      }
+    ]
   },
   {
     index: "sorcerer",
     name: "Sorcerer",
     hitDice: "6",
+    subclass: [
+      {
+        index: "draconic bloodline",
+        name: "Draconic Bloodline",
+      },
+      {
+        index: "wild magic",
+        name: "Wild Magic",
+      },
+    ]
   },
   {
     index: "warlock",
     name: "Warlock",
     hitDice: "8",
+    subclass: [
+      {
+        index: "archfey",
+        name: "Archfey",
+      },
+      {
+        index: "fiend",
+        name: "Fiend",
+      },
+      {
+        index: "the great old one",
+        name: "The Great Old One"
+      }
+    ]
   },
   {
     index: "wizard",
     name: "Wizard",
     hitDice: "6",
-  },
-  {
-    index: "artificer",
-    name: "Artificer",
-    hitDice: "8",
-  },
+    subclass: [
+      {
+        index: "abjuration",
+        name: "Abjuration",
+      },
+      {
+        index: "conjuration",
+        name: "Conjuration",
+      },
+      {
+        index: "divination",
+        name: "Divination",
+      },
+      {
+        index: "enchantment",
+        name: "Enchantment",
+      },
+      {
+        index: "evocation",
+        name: "Evocation",
+      },
+      {
+        index: "illusion",
+        name: "Illusion",
+      },
+      {
+        index: "necromancy",
+        name: "Necromancy",
+      },
+      {
+        index: "rransmutation",
+        name: "Transmutation",
+      },
+    ]
+  }
 ];
