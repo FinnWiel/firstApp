@@ -2,6 +2,7 @@ import * as React from "react";
 import { Text, View, TextInput, StyleSheet, ScrollView } from "react-native";
 import Checkbox from "expo-checkbox";
 import { useState } from "react";
+import StatBar from "./statBar";
 
 export default function CombatScreen() {
   const initialState = {

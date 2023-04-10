@@ -5,6 +5,7 @@ import { useState } from "react";
 import { StatBlock } from "./statBlock";
 import SelectDropdown from "react-native-select-dropdown";
 import { races, classes } from "./Data";
+import StatBar from "./statBar";
 
 export default function CharacterScreen() {
   const [characterClass, setCharacterClass] = useState();
@@ -152,36 +153,14 @@ export default function CharacterScreen() {
         </View>
       </View>
 
-      <View style={styles.containerBar}>
-        <View style={styles.subContainerBar}>
-          <Text style={styles.labelText}>Speed</Text>
-          <TextInput
-            placeholder="..."
-            keyboardType="number-pad"
-            style={styles.inputText}
-          >
-            {raceIdx.map((x) => x.speed) * 5 || 0}
-          </TextInput>
-        </View>
+      <StatBar
+        raceId={raceIdx}
+        classId={classIdx}
+        dexMod={dexMod}
+        proficiency={proficiencyBonus}
+        wisMod={wisMod}
+      />
 
-        <View style={styles.subContainerBar}>
-          <Text style={styles.labelText}>Initiative</Text>
-          <Text style={styles.inputText}>
-            {dexMod < 0 ? dexMod : "+" + dexMod}
-          </Text>
-        </View>
-
-        <View style={styles.subContainerBar}>
-          <Text style={styles.labelText}>Proficiency</Text>
-          <Text style={styles.inputText}>+{proficiencyBonus}</Text>
-        </View>
-
-        <View style={styles.subContainerBar}>
-          <Text style={styles.labelText}>Passive Wis</Text>
-          <Text style={styles.inputText}>{wisMod + 10}</Text>
-        </View>
-      </View>
-      
       <View style={styles.statContainer}>
         <StatBlock
           stat="Strenght"
