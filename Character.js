@@ -4,15 +4,20 @@ import StatScore from "./statScore";
 import { useState } from "react";
 import { StatBlock } from "./statBlock";
 import SelectDropdown from "react-native-select-dropdown";
-import { races, classes } from "./Data";
+import { races, classes, backgrounds } from "./Data";
 import StatBar from "./statBar";
 
 export default function CharacterScreen() {
   const [characterClass, setCharacterClass] = useState();
   const classIdx = classes.filter((clas) => clas.name === characterClass);
+  const subclassIdx = classIdx.map((x) => x.subclass);
+  const subclassIdx1 = classIdx.filter((subclass) => subclass.name);
+  console.log(subclassIdx);
 
   const [characterRace, setCharacterRace] = useState();
   const raceIdx = races.filter((race) => race.name === characterRace);
+
+
 
   const [strenghtBonus, setStrenghtBonus] = useState("10");
   const [dexterityBonus, setDexterityBonus] = useState("10");
@@ -109,6 +114,43 @@ export default function CharacterScreen() {
             selectedRowStyle={{ backgroundColor: "#005683" }}
             selectedRowTextStyle={{ color: "#fff" }}
             data={races.map((x) => x.name)}
+            onSelect={(newCharacterRace) => setCharacterRace(newCharacterRace)}
+          ></SelectDropdown>
+        </View>
+      </View>
+      <View style={{
+          flex: 0,
+          justifyContent: "space-between",
+          height: 40,
+          width: "90%",
+          flexDirection: "row",
+          top: 50,
+          gap: 15,
+        }}>
+        <View>
+          <SelectDropdown
+            defaultButtonText="Subclass"
+            buttonStyle={[
+              styles.containerBar,
+              { top: 0, height: 40, width: "90%" },
+            ]}
+            dropdownStyle={{ marginTop: -25, borderRadius: 10 }}
+            selectedRowStyle={{ backgroundColor: "#005683" }}
+            selectedRowTextStyle={{ color: "#fff" }}
+            data={subclassIdx.map((x) => x.name)}
+          ></SelectDropdown>
+        </View>
+        <View>
+          <SelectDropdown
+            defaultButtonText="Background"
+            buttonStyle={[
+              styles.containerBar,
+              { top: 0, height: 40, width: "90%" },
+            ]}
+            dropdownStyle={{ marginTop: -25, borderRadius: 10 }}
+            selectedRowStyle={{ backgroundColor: "#005683" }}
+            selectedRowTextStyle={{ color: "#fff" }}
+            data={backgrounds.map((x) => x.name)}
             onSelect={(newCharacterRace) => setCharacterRace(newCharacterRace)}
           ></SelectDropdown>
         </View>

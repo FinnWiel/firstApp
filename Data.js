@@ -52,292 +52,176 @@ export const classes = [
     name: "Barbarian",
     hitDice: "12",
     subclass: [
-      {
-        index: "berserker",
-        name: "Berserker",
-      },
-      {
-        index: "totem warrior",
-        name: "Totem Warrior",
-      },
-    ]
+      {subclassname: "Berserker" }
+    ],
   },
   {
     index: "bard",
     name: "Bard",
     hitDice: "8",
     subclass: [
-      {
-        index: "lore",
-        name: "Lore",
-      },
-      {
-        index: "valor",
-        name: "Valor",
-      },
-    ]
+      { name: "Lore" }, 
+      { name: "Valor" }
+    ],
   },
   {
     index: "cleric",
     name: "Cleric",
     hitDice: "8",
     subclass: [
-      {
-        index: "knowledge",
-        name: "Knowledge",
-      },
-      {
-        index: "life",
-        name: "Life",
-      },
-      {
-        index: "light",
-        name: "Light"
-      },
-      {
-        index: "nature",
-        name: "Nature"
-      },
-      {
-        index: "tempest",
-        name: "Tempest"
-      },
-      {
-        index: "trickery",
-        name: "Trickery"
-      },
-      {
-        index: "war",
-        name: "War"
-      }
-    ]
+      { name: "Knowledge" },
+      { name: "Life" },
+      { name: "Light" },
+      { name: "Nature" },
+      { name: "Tempest" },
+      { name: "Trickery" },
+      { name: "War" },
+    ],
   },
   {
     index: "druid",
     name: "Druid",
     hitDice: "8",
     subclass: [
-      {
-        index: "land",
-        name: "Land",
-      },
-      {
-        index: "moon",
-        name: "Moon",
-      },
-    ]
+      { name: "Land" }, 
+      { name: "Moon" }
+    ],
   },
   {
     index: "fighter",
     name: "Fighter",
     hitDice: "10",
     subclass: [
-      {
-        index: "champion",
-        name: "Champion",
-      },
-      {
-        index: "battle master",
-        name: "Battle Master",
-      },
-      {
-        index: "eldrich knight",
-        name: "Eldrich Knight"
-      }
-    ]
+      { name: "Champion" },
+      { name: "Battle Master" },
+      { name: "Eldrich Knight" },
+    ],
   },
   {
     index: "monk",
     name: "Monk",
     hitDice: "8",
     subclass: [
-      {
-        index: "shadow",
-        name: "Shadow",
-      },
-      {
-        index: "four flements",
-        name: "Four Elements"
-      },
-    ]
+      { name: "Shadow" }, 
+      { name: "Four Elements" }
+    ],
   },
   {
     index: "paladin",
     name: "Paladin",
     hitDice: "10",
     subclass: [
-      {
-        index: "devotion",
-        name: "Devotion",
-      },
-      {
-        index: "ancients",
-        name: "Ancients",
-      },
-      {
-        index: "vengance",
-        name: "Vengance"
-      }
-    ]
+      { name: "Devotion" },
+      { name: "Ancients" },
+      { name: "Vengance" },
+    ],
   },
   {
     index: "ranger",
     name: "Ranger",
     hitDice: "10",
     subclass: [
-      {
-        index: "hunter",
-        name: "Hunter",
-      },
-      {
-        index: "beast master",
-        name: "Beast Master",
-      },
-    ]
+      { name: "Hunter" },
+      { name: "Beast Master" }
+    ],
   },
   {
     index: "rogue",
     name: "Rogue",
     hitDice: "8",
     subclass: [
-      {
-        index: "thief",
-        name: "Thief",
-      },
-      {
-        index: "assasin",
-        name: "Assasin",
-      },
-      {
-        index: "arcane trickster",
-        name: "Arcane Trickster"
-      }
-    ]
+      { name: "Thief" },
+      { name: "Assasin" },
+      { name: "Arcane Trickster" },
+    ],
   },
   {
     index: "sorcerer",
     name: "Sorcerer",
     hitDice: "6",
     subclass: [
-      {
-        index: "draconic bloodline",
-        name: "Draconic Bloodline",
-      },
-      {
-        index: "wild magic",
-        name: "Wild Magic",
-      },
-    ]
+      { name: "Draconic Bloodline" },
+      { name: "Wild Magic" }
+    ],
   },
   {
     index: "warlock",
     name: "Warlock",
     hitDice: "8",
     subclass: [
-      {
-        index: "archfey",
-        name: "Archfey",
-      },
-      {
-        index: "fiend",
-        name: "Fiend",
-      },
-      {
-        index: "the great old one",
-        name: "The Great Old One"
-      }
-    ]
+      { name: "Archfey" },
+      { name: "Fiend" },
+      { name: "The Great Old One" },
+    ],
   },
   {
     index: "wizard",
     name: "Wizard",
     hitDice: "6",
     subclass: [
-      {
-        index: "abjuration",
-        name: "Abjuration",
-      },
-      {
-        index: "conjuration",
-        name: "Conjuration",
-      },
-      {
-        index: "divination",
-        name: "Divination",
-      },
-      {
-        index: "enchantment",
-        name: "Enchantment",
-      },
-      {
-        index: "evocation",
-        name: "Evocation",
-      },
-      {
-        index: "illusion",
-        name: "Illusion",
-      },
-      {
-        index: "necromancy",
-        name: "Necromancy",
-      },
-      {
-        index: "rransmutation",
-        name: "Transmutation",
-      },
-    ]
-  }
+      { name: "Abjuration" },
+      { name: "Conjuration" },
+      { name: "Divination" },
+      { name: "Enchantment" },
+      { name: "Evocation" },
+      { name: "Illusion" },
+      { name: "Necromancy" },
+      { name: "Transmutation" },
+    ],
+  },
 ];
 
 export const backgrounds = [
   {
     index: "acolyte",
-    name: "Acolyte"
+    name: "Acolyte",
   },
   {
     index: "charlatan",
-    name: "Charlatan"
+    name: "Charlatan",
   },
   {
     index: "criminal",
-    name: "Criminal"
+    name: "Criminal",
   },
   {
     index: "entertainer",
-    name: "Entertainer"
+    name: "Entertainer",
   },
   {
     index: "folk hero",
-    name: "Folk Hero"
+    name: "Folk Hero",
   },
   {
     index: "guild artisan",
-    name: "Guild Artisan"
+    name: "Guild Artisan",
   },
   {
     index: "hermit",
-    name: "Hermit"
-  },{
+    name: "Hermit",
+  },
+  {
     index: "noble",
-    name: "Noble"
+    name: "Noble",
   },
   {
     index: "outlander",
-    name: "Outlander"
-  },{
+    name: "Outlander",
+  },
+  {
     index: "sage",
-    name: "Sage"
+    name: "Sage",
   },
   {
     index: "sailor",
-    name: "Sailor"
+    name: "Sailor",
   },
   {
     index: "soldier",
-    name: "Soldier"
+    name: "Soldier",
   },
   {
     index: "urchin",
-    name: "Urchin"
+    name: "Urchin",
   },
-]
+];
