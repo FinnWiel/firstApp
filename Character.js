@@ -17,8 +17,6 @@ export default function CharacterScreen() {
   const [characterRace, setCharacterRace] = useState();
   const raceIdx = races.filter((race) => race.name === characterRace);
 
-
-
   const [strenghtBonus, setStrenghtBonus] = useState("10");
   const [dexterityBonus, setDexterityBonus] = useState("10");
   const [constitutionBonus, setConstitutionBonus] = useState("10");
@@ -118,7 +116,8 @@ export default function CharacterScreen() {
           ></SelectDropdown>
         </View>
       </View>
-      <View style={{
+      <View
+        style={{
           flex: 0,
           justifyContent: "space-between",
           height: 40,
@@ -126,7 +125,8 @@ export default function CharacterScreen() {
           flexDirection: "row",
           top: 50,
           gap: 15,
-        }}>
+        }}
+      >
         <View>
           <SelectDropdown
             defaultButtonText="Subclass"

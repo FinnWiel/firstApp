@@ -39,23 +39,6 @@ export default function StatBar(props) {
 }
 
 const styles = StyleSheet.create({
-    circle: {
-      borderRadius: 50,
-      height: 100,
-      width: 100,
-      backgroundColor: "#fff",
-      flex: 0,
-      justifyContent: "center",
-      alignItems: "center",
-      shadowColor: "#000",
-      shadowOffset: { width: 0, height: 5 },
-      shadowOpacity: 0.3,
-      shadowRadius: 6,
-      elevation: 6,
-    },
-    labelText: {
-      color: "#000",
-    },
     inputText: {
       fontSize: 32,
     },
@@ -84,44 +67,6 @@ const styles = StyleSheet.create({
       height: "90%",
       width: "20%",
       backgroundColor: "transparent",
-    },
-    checkbox: {
-      margin: 5,
-    },
-    statContainer: {
-      flex: 0,
-      flexDirection: "row",
-      gap: 20,
-      top: 50,
-      flexWrap: "wrap",
-      justifyContent: "center",
-    },
-    statScore: {
-      flex: 0,
-      justifyContent: "center",
-      alignItems: "center",
-      flexDirection: "row",
-      height: 150,
-      width: 150,
-      backgroundColor: "white",
-      shadowColor: "#000",
-      shadowOffset: { width: 0, height: 5 },
-      shadowOpacity: 0.3,
-      shadowRadius: 6,
-      elevation: 6,
-      borderRadius: 10,
-    },
-    statBonus: {
-      backgroundColor: "lightgray",
-      height: 130,
-      width: 65,
-      position: "absolute",
-      right: 0,
-      borderRadius: 5,
-      margin: 10,
-      flex: 0,
-      justifyContent: "center",
-      alignItems: "center",
     },
   });
   
