@@ -14,6 +14,8 @@ export default function CharacterScreen() {
   const subclassIdx1 = classIdx.filter((subclass) => subclass.name);
   console.log(subclassIdx);
 
+  var subclass = subclass?.map(function(subclass){subclass?.name})
+
   const [characterRace, setCharacterRace] = useState();
   const raceIdx = races.filter((race) => race.name === characterRace);
 
@@ -137,7 +139,7 @@ export default function CharacterScreen() {
             dropdownStyle={{ marginTop: -25, borderRadius: 10 }}
             selectedRowStyle={{ backgroundColor: "#005683" }}
             selectedRowTextStyle={{ color: "#fff" }}
-            data={subclassIdx.map((x) => x.name)}
+            
           ></SelectDropdown>
         </View>
         <View>

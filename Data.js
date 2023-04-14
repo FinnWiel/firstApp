@@ -52,7 +52,7 @@ export const classes = [
     name: "Barbarian",
     hitDice: "12",
     subclass: [
-      {subclassname: "Berserker" }
+      { name: "Berserker" }
     ],
   },
   {
