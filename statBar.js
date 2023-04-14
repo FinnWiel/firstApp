@@ -1,8 +1,5 @@
 import * as React from "react";
 import { Text, View, TextInput, StyleSheet, ScrollView } from "react-native";
-import { useState } from "react";
-import { clickProps } from "react-native-web/dist/cjs/modules/forwardedProps";
-
 
 export default function StatBar(props) {
     return (
