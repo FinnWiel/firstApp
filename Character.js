@@ -8,11 +8,13 @@ import { races, classes, backgrounds } from "./Data";
 import StatBar from "./statBar";
 
 export default function CharacterScreen() {
+
   const [characterClass, setCharacterClass] = useState();
   const classIdx = classes.filter((clas) => clas.name === characterClass);
+
   const subclassIdx = classIdx.map((x) => x.subclass);
-  const subclassIdx1 = classIdx.filter((subclass) => subclass.name);
-  console.log(subclassIdx);
+  const subclassIdx1 = classIdx.filter((x) => x.subclass.name);
+  console.log(classIdx.subclass);
 
   var subclass = subclass?.map(function(subclass){subclass?.name})
 
@@ -139,7 +141,7 @@ export default function CharacterScreen() {
             dropdownStyle={{ marginTop: -25, borderRadius: 10 }}
             selectedRowStyle={{ backgroundColor: "#005683" }}
             selectedRowTextStyle={{ color: "#fff" }}
-            
+            // data={data}
           ></SelectDropdown>
         </View>
         <View>
