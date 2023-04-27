@@ -139,6 +139,8 @@ export default function CharacterScreen() {
             dropdownStyle={{ marginTop: -25, borderRadius: 10 }}
             selectedRowStyle={{ backgroundColor: "#005683" }}
             selectedRowTextStyle={{ color: "#fff" }}
+            buttonTextStyle={{fontSize: 12}}
+            rowTextStyle={{fontSize: 12}}
             data={selectedSubclasses}
             onSelect={(newCharacterSublass) =>
               setCharacterSublass(newCharacterSublass)
@@ -153,6 +155,7 @@ export default function CharacterScreen() {
               { top: 0, height: 40, width: "90%" },
             ]}
             dropdownStyle={{ marginTop: -25, borderRadius: 10 }}
+            buttonTextStyle={{fontSize: 12}}
             selectedRowStyle={{ backgroundColor: "#005683" }}
             selectedRowTextStyle={{ color: "#fff" }}
             data={backgrounds.map((x) => x.name)}
