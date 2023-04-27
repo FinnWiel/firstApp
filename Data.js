@@ -55,6 +55,10 @@ export const classes = [
       { subname: "Path of the Berserker" },
       { subname: "Path of the Totem Warrior" }
     ],
+    savingThrow: [
+      { save: "str" },
+      { save: "con" }
+    ]
   },
   {
     index: "bard",
@@ -64,6 +68,10 @@ export const classes = [
       { subname: "College of Lore" }, 
       { subname: "College of Valor" }
     ],
+    savingThrow: [
+      { save: "dex" },
+      { save: "cha" }
+    ]
   },
   {
     index: "cleric",
@@ -78,6 +86,10 @@ export const classes = [
       { subname: "Trickery Domain" },
       { subname: "War Domain" },
     ],
+    savingThrow: [
+      { save: "wis" },
+      { save: "cha" }
+    ]
   },
   {
     index: "druid",
@@ -87,6 +99,10 @@ export const classes = [
       { subname: "Circle of the Land" }, 
       { subname: "Circle of the Moon" }
     ],
+    savingThrow: [
+      { save: "int" },
+      { save: "wis" }
+    ]
   },
   {
     index: "fighter",
@@ -97,6 +113,10 @@ export const classes = [
       { subname: "Battle Master" },
       { subname: "Eldrich Knight" },
     ],
+    savingThrow: [
+      { save: "str" },
+      { save: "con" }
+    ]
   },
   {
     index: "monk",
@@ -106,6 +126,10 @@ export const classes = [
       { subname: "Way of the Shadow" }, 
       { subname: "Way of the Four Elements" }
     ],
+    savingThrow: [
+      { save: "str" },
+      { save: "dex" }
+    ]
   },
   {
     index: "paladin",
@@ -116,6 +140,10 @@ export const classes = [
       { subname: "Oath of Ancients" },
       { subname: "Oath of Vengance" },
     ],
+    savingThrow: [
+      { save: "wis" },
+      { save: "cha" }
+    ]
   },
   {
     index: "ranger",
@@ -125,6 +153,10 @@ export const classes = [
       { subname: "Hunter" },
       { subname: "Beast Master" }
     ],
+    savingThrow: [
+      { save: "str" },
+      { save: "dex" }
+    ]
   },
   {
     index: "rogue",
@@ -135,6 +167,10 @@ export const classes = [
       { subname: "Assasin" },
       { subname: "Arcane Trickster" },
     ],
+    savingThrow: [
+      { save: "dex" },
+      { save: "int" }
+    ]
   },
   {
     index: "sorcerer",
@@ -144,6 +180,10 @@ export const classes = [
       { subname: "Draconic Bloodline" },
       { subname: "Wild Magic" }
     ],
+    savingThrow: [
+      { save: "con" },
+      { save: "cha" }
+    ]
   },
   {
     index: "warlock",
@@ -154,6 +194,10 @@ export const classes = [
       { subname: "The Fiend" },
       { subname: "The Great Old One" },
     ],
+    savingThrow: [
+      { save: "wis" },
+      { save: "cha" }
+    ]
   },
   {
     index: "wizard",
@@ -169,6 +213,10 @@ export const classes = [
       { subname: "School of Necromancy" },
       { subname: "School of Transmutation" },
     ],
+    savingThrow: [
+      { save: "int" },
+      { save: "wis" }
+    ]
   },
 ];
 
