@@ -52,7 +52,8 @@ export const classes = [
     name: "Barbarian",
     hitDice: "12",
     subclass: [
-      { subname: "Berserker" }
+      { subname: "Path of the Berserker" },
+      { subname: "Path of the Totem Warrior" }
     ],
   },
   {
@@ -60,8 +61,8 @@ export const classes = [
     name: "Bard",
     hitDice: "8",
     subclass: [
-      { subname: "Lore" }, 
-      { subname: "Valor" }
+      { subname: "College of Lore" }, 
+      { subname: "College of Valor" }
     ],
   },
   {
@@ -69,13 +70,13 @@ export const classes = [
     name: "Cleric",
     hitDice: "8",
     subclass: [
-      { subname: "Knowledge" },
-      { subname: "Life" },
-      { subname: "Light" },
-      { subname: "Nature" },
-      { subname: "Tempest" },
-      { subname: "Trickery" },
-      { subname: "War" },
+      { subname: "Knowledge Domain" },
+      { subname: "Life Domain" },
+      { subname: "Light Domain" },
+      { subname: "Nature Domain" },
+      { subname: "Tempest Domain" },
+      { subname: "Trickery Domain" },
+      { subname: "War Domain" },
     ],
   },
   {
@@ -83,8 +84,8 @@ export const classes = [
     name: "Druid",
     hitDice: "8",
     subclass: [
-      { subname: "Land" }, 
-      { subname: "Moon" }
+      { subname: "Circle of the Land" }, 
+      { subname: "Circle of the Moon" }
     ],
   },
   {
@@ -102,8 +103,8 @@ export const classes = [
     name: "Monk",
     hitDice: "8",
     subclass: [
-      { subname: "Shadow" }, 
-      { subname: "Four Elements" }
+      { subname: "Way of the Shadow" }, 
+      { subname: "Way of the Four Elements" }
     ],
   },
   {
@@ -111,9 +112,9 @@ export const classes = [
     name: "Paladin",
     hitDice: "10",
     subclass: [
-      { subname: "Devotion" },
-      { subname: "Ancients" },
-      { subname: "Vengance" },
+      { subname: "Oath of Devotion" },
+      { subname: "Oath of Ancients" },
+      { subname: "Oath of Vengance" },
     ],
   },
   {
@@ -149,8 +150,8 @@ export const classes = [
     name: "Warlock",
     hitDice: "8",
     subclass: [
-      { subname: "Archfey" },
-      { subname: "Fiend" },
+      { subname: "The Archfey" },
+      { subname: "The Fiend" },
       { subname: "The Great Old One" },
     ],
   },
@@ -159,14 +160,14 @@ export const classes = [
     name: "Wizard",
     hitDice: "6",
     subclass: [
-      { subname: "Abjuration" },
-      { subname: "Conjuration" },
-      { subname: "Divination" },
-      { subname: "Enchantment" },
-      { subname: "Evocation" },
-      { subname: "Illusion" },
-      { subname: "Necromancy" },
-      { subname: "Transmutation" },
+      { subname: "School of Abjuration" },
+      { subname: "School of Conjuration" },
+      { subname: "School of Divination" },
+      { subname: "School of Enchantment" },
+      { subname: "School of Evocation" },
+      { subname: "School of Illusion" },
+      { subname: "School of Necromancy" },
+      { subname: "School of Transmutation" },
     ],
   },
 ];
