@@ -12,12 +12,9 @@ export default function CharacterScreen() {
   const [characterClass, setCharacterClass] = useState();
   const classIdx = classes.filter((clas) => clas.name === characterClass);
 
-  console.log(characterClass);
-
   const selectedSubclasses = classes.find(cls => cls.name === characterClass)?.subclass.map(sub => sub.subname);
-
-  console.log(selectedSubclasses); // output: ["Lore", "Valor"]
-
+  const [characterSubclass, setCharacterSublass] = useState();
+  console.log(characterSubclass)
 
   const [characterRace, setCharacterRace] = useState();
   const raceIdx = races.filter((race) => race.name === characterRace);
@@ -143,6 +140,9 @@ export default function CharacterScreen() {
             selectedRowStyle={{ backgroundColor: "#005683" }}
             selectedRowTextStyle={{ color: "#fff" }}
             data={selectedSubclasses}
+            onSelect={(newCharacterSublass) =>
+              setCharacterSublass(newCharacterSublass)
+            }
           ></SelectDropdown>
         </View>
         <View>
