@@ -9,6 +9,7 @@ import StatBar from "./components/statBar";
 import Saves from "./components/Saves";
 import StatBlock from "./components/statBlock";
 import StatScore from "./components/statScore";
+import DeathSaves from "./components/Deathsave";
 
 export default function CharacterScreen() {
   //Class
@@ -227,6 +228,8 @@ export default function CharacterScreen() {
           </View>
         </View>
       </View>
+
+      <DeathSaves></DeathSaves>
 
       <StatBar
         raceId={raceIdx}
