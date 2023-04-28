@@ -12,21 +12,23 @@ import StatScore from "./components/statScore";
 
 export default function CharacterScreen() {
 
+  //Class
   const [characterClass, setCharacterClass] = useState();
   const classIdx = classes.filter((clas) => clas.name === characterClass);
-
-  const selectedSubclasses = classes.find(cls => cls.name === characterClass)?.subclass.map(sub => sub.subname);
   const selectedSavingthrows = classes.find(cls => cls.name === characterClass)?.savingThrow.map(sub => sub.save);
 
-  console.log(characterClass, characterRace, characterBackground, characterSubclass)
-
+  //Subclass
+  const selectedSubclasses = classes.find(cls => cls.name === characterClass)?.subclass.map(sub => sub.subname);
   const [characterSubclass, setCharacterSublass] = useState();
 
+  //Race
   const [characterRace, setCharacterRace] = useState();
   const raceIdx = races.filter((race) => race.name === characterRace);
 
+  //Background
   const [characterBackground, setCharacterBackground] = useState();
 
+  //Stats
   const [strenghtBonus, setStrenghtBonus] = useState("10");
   const [dexterityBonus, setDexterityBonus] = useState("10");
   const [constitutionBonus, setConstitutionBonus] = useState("10");
@@ -34,12 +36,18 @@ export default function CharacterScreen() {
   const [wisdomBonus, setWisdomBonus] = useState("10");
   const [charismaBonus, setCharismaBonus] = useState("10");
 
+  //Mods
   const dexMod = Math.floor((dexterityBonus - 10) / 2);
   const wisMod = Math.floor((wisdomBonus - 10) / 2);
 
+  //Level
   const [level, setLevel] = useState(1);
+
+  //AC
   let armor = 10;
   const AC = armor + Math.floor((dexterityBonus - 10) / 2);
+
+  //Profficiency
   let proficiencyBonus =
     level <= 5
       ? 2
