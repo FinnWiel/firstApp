@@ -1,11 +1,14 @@
 import * as React from "react";
 import { Text, View, TextInput, StyleSheet, ScrollView } from "react-native";
-import StatScore from "./statScore";
 import { useState } from "react";
-import { StatBlock } from "./statBlock";
 import SelectDropdown from "react-native-select-dropdown";
-import { races, classes, backgrounds } from "./Data";
-import StatBar from "./statBar";
+import { backgrounds } from "./Data/BackgroundData";
+import { classes } from "./Data/ClassData"
+import { races } from "./Data/RaceData"
+import StatBar from "./components/statBar";
+import Saves from "./components/Saves";
+import StatBlock from "./components/statBlock";
+import StatScore from "./components/statScore";
 
 export default function CharacterScreen() {
 
@@ -13,11 +16,16 @@ export default function CharacterScreen() {
   const classIdx = classes.filter((clas) => clas.name === characterClass);
 
   const selectedSubclasses = classes.find(cls => cls.name === characterClass)?.subclass.map(sub => sub.subname);
+  const selectedSavingthrows = classes.find(cls => cls.name === characterClass)?.savingThrow.map(sub => sub.save);
+
+  console.log(characterClass, characterRace, characterBackground, characterSubclass)
+
   const [characterSubclass, setCharacterSublass] = useState();
-  console.log(characterSubclass)
 
   const [characterRace, setCharacterRace] = useState();
   const raceIdx = races.filter((race) => race.name === characterRace);
+
+  const [characterBackground, setCharacterBackground] = useState();
 
   const [strenghtBonus, setStrenghtBonus] = useState("10");
   const [dexterityBonus, setDexterityBonus] = useState("10");
@@ -114,7 +122,9 @@ export default function CharacterScreen() {
             selectedRowStyle={{ backgroundColor: "#005683" }}
             selectedRowTextStyle={{ color: "#fff" }}
             data={races.map((x) => x.name)}
-            onSelect={(newCharacterRace) => setCharacterRace(newCharacterRace)}
+            onSelect={(newCharacterRace) => 
+              setCharacterRace(newCharacterRace)
+            }
           ></SelectDropdown>
         </View>
       </View>
@@ -159,8 +169,10 @@ export default function CharacterScreen() {
             selectedRowStyle={{ backgroundColor: "#005683" }}
             selectedRowTextStyle={{ color: "#fff" }}
             data={backgrounds.map((x) => x.name)}
-            onSelect={(newCharacterRace) => setCharacterRace(newCharacterRace)}
-          ></SelectDropdown>
+            onSelect={(newCharacterBackground) =>
+              setCharacterBackground(newCharacterBackground)
+            }
+            ></SelectDropdown>
         </View>
       </View>
 
@@ -244,6 +256,14 @@ export default function CharacterScreen() {
         />
       </View>
 
+      <View style={[styles.statContainer, {marginHorizontal: 10, gap: 5}]}>
+        <Saves stat="Strenght"/>
+        <Saves stat="Dexterity"/>
+        <Saves stat="Constitution"/>
+        <Saves stat="Intelligence"/>
+        <Saves stat="Wisdom"/>
+        <Saves stat="Charisma"/>
+      </View>
       <View
         style={{
           flex: 0,
