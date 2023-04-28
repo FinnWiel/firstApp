@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Text, View, TextInput, StyleSheet } from "react-native";
 
-export function StatBlock(props) {
+export default function StatBlock(props) {
   let statBonusMod = Math.floor((props.state - 10) / 2);
 
   return (
