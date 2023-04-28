@@ -4,16 +4,9 @@ import Checkbox from "expo-checkbox";
 import { useState } from "react";
 
 export default function DeathSaves() {
-  const initialState = {
-    checkboxFailOne: false,
-    checkboxFailTwo: false,
-    checkboxFailThree: false,
-    checkboxSuccesOne: false,
-    checkboxSuccesTwo: false,
-    checkboxSuccesThree: false,
-  };
+  const [checked, setChecked] = useState(false);
 
-  const [checked, setChecked] = useState(initialState);
+  console.log(checked)
 
   return (
     <View style={styles.containerBar}>
