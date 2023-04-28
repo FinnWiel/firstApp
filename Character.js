@@ -270,12 +270,12 @@ export default function CharacterScreen() {
       </View>
 
       <View style={[styles.statContainer, { marginHorizontal: 10, gap: 5 }]}>
-        <Saves stat="Strenght" mod={strMod} />
-        <Saves stat="Dexterity" mod={dexMod} />
-        <Saves stat="Constitution" mod={conMod} />
-        <Saves stat="Intelligence" mod={intMod} />
-        <Saves stat="Wisdom" mod={wisMod} />
-        <Saves stat="Charisma" mod={chaMod} />
+        <Saves stat="Strenght" mod={strenghtBonus}/>
+        <Saves stat="Dexterity" mod={dexterityBonus}/>
+        <Saves stat="Constitution" mod={constitutionBonus}/>
+        <Saves stat="Intelligence" mod={intelligenceBonus}/>
+        <Saves stat="Wisdom" mod={wisdomBonus}/>
+        <Saves stat="Charisma" mod={charismaBonus}/>
       </View>
 
       <View

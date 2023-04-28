@@ -2,6 +2,7 @@ import React from "react";
 import { Text, View, TextInput, StyleSheet } from "react-native";
 
 export default function Saves(props) {
+
   return (
     <View>
       <View style={styles.statScore}>
@@ -19,7 +20,7 @@ export default function Saves(props) {
             alignItems: "center",
           }}
         >
-          <TextInput style={{ fontSize: 32 }}>{10 + props.mod || 10}</TextInput>
+          <TextInput style={{ fontSize: 32 }}>{Math.floor((props.mod - 10) / 2)}</TextInput>
         </View>
       </View>
     </View>
