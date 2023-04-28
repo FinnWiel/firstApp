@@ -65,5 +65,8 @@ const styles = StyleSheet.create({
       width: "20%",
       backgroundColor: "transparent",
     },
+    labelText: {
+      fontSize: 12,
+    }
   });
   

@@ -3,22 +3,25 @@ import { Text, View, TextInput, StyleSheet, ScrollView } from "react-native";
 import { useState } from "react";
 import SelectDropdown from "react-native-select-dropdown";
 import { backgrounds } from "./Data/BackgroundData";
-import { classes } from "./Data/ClassData"
-import { races } from "./Data/RaceData"
+import { classes } from "./Data/ClassData";
+import { races } from "./Data/RaceData";
 import StatBar from "./components/statBar";
 import Saves from "./components/Saves";
 import StatBlock from "./components/statBlock";
 import StatScore from "./components/statScore";
 
 export default function CharacterScreen() {
-
   //Class
   const [characterClass, setCharacterClass] = useState();
   const classIdx = classes.filter((clas) => clas.name === characterClass);
-  const selectedSavingthrows = classes.find(cls => cls.name === characterClass)?.savingThrow.map(sub => sub.save);
+  const selectedSavingthrows = classes
+    .find((cls) => cls.name === characterClass)
+    ?.savingThrow.map((sub) => sub.save);
 
   //Subclass
-  const selectedSubclasses = classes.find(cls => cls.name === characterClass)?.subclass.map(sub => sub.subname);
+  const selectedSubclasses = classes
+    .find((cls) => cls.name === characterClass)
+    ?.subclass.map((sub) => sub.subname);
   const [characterSubclass, setCharacterSublass] = useState();
 
   //Race
@@ -37,8 +40,12 @@ export default function CharacterScreen() {
   const [charismaBonus, setCharismaBonus] = useState("10");
 
   //Mods
+  const strMod = Math.floor((strenghtBonus - 10) / 2);
   const dexMod = Math.floor((dexterityBonus - 10) / 2);
+  const conMod = Math.floor((constitutionBonus - 10) / 2);
+  const intMod = Math.floor((intelligenceBonus - 10) / 2);
   const wisMod = Math.floor((wisdomBonus - 10) / 2);
+  const chaMod = Math.floor((charismaBonus - 10) / 2);
 
   //Level
   const [level, setLevel] = useState(1);
@@ -130,9 +137,7 @@ export default function CharacterScreen() {
             selectedRowStyle={{ backgroundColor: "#005683" }}
             selectedRowTextStyle={{ color: "#fff" }}
             data={races.map((x) => x.name)}
-            onSelect={(newCharacterRace) => 
-              setCharacterRace(newCharacterRace)
-            }
+            onSelect={(newCharacterRace) => setCharacterRace(newCharacterRace)}
           ></SelectDropdown>
         </View>
       </View>
@@ -157,8 +162,8 @@ export default function CharacterScreen() {
             dropdownStyle={{ marginTop: -25, borderRadius: 10 }}
             selectedRowStyle={{ backgroundColor: "#005683" }}
             selectedRowTextStyle={{ color: "#fff" }}
-            buttonTextStyle={{fontSize: 12}}
-            rowTextStyle={{fontSize: 12}}
+            buttonTextStyle={{ fontSize: 12 }}
+            rowTextStyle={{ fontSize: 12 }}
             data={selectedSubclasses}
             onSelect={(newCharacterSublass) =>
               setCharacterSublass(newCharacterSublass)
@@ -173,14 +178,14 @@ export default function CharacterScreen() {
               { top: 0, height: 40, width: "90%" },
             ]}
             dropdownStyle={{ marginTop: -25, borderRadius: 10 }}
-            buttonTextStyle={{fontSize: 12}}
+            buttonTextStyle={{ fontSize: 12 }}
             selectedRowStyle={{ backgroundColor: "#005683" }}
             selectedRowTextStyle={{ color: "#fff" }}
             data={backgrounds.map((x) => x.name)}
             onSelect={(newCharacterBackground) =>
               setCharacterBackground(newCharacterBackground)
             }
-            ></SelectDropdown>
+          ></SelectDropdown>
         </View>
       </View>
 
@@ -264,14 +269,15 @@ export default function CharacterScreen() {
         />
       </View>
 
-      <View style={[styles.statContainer, {marginHorizontal: 10, gap: 5}]}>
-        <Saves stat="Strenght"/>
-        <Saves stat="Dexterity"/>
-        <Saves stat="Constitution"/>
-        <Saves stat="Intelligence"/>
-        <Saves stat="Wisdom"/>
-        <Saves stat="Charisma"/>
+      <View style={[styles.statContainer, { marginHorizontal: 10, gap: 5 }]}>
+        <Saves stat="Strenght" mod={strMod} />
+        <Saves stat="Dexterity" mod={dexMod} />
+        <Saves stat="Constitution" mod={conMod} />
+        <Saves stat="Intelligence" mod={intMod} />
+        <Saves stat="Wisdom" mod={wisMod} />
+        <Saves stat="Charisma" mod={chaMod} />
       </View>
+
       <View
         style={{
           flex: 0,
